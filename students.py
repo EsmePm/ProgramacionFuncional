@@ -10,8 +10,8 @@ def run():
     )
 
     #solution = {i[0]: i for i in students if i[2] >= 18}   #mayor de 18
-    #solution = {i[0]: i for i in students if i[2] <= 18  if i[3] =='M'}    #menor a 18 y que sea m
-    solution = {i[0]: {'cal': i[1], 'edad':i[2], 'sexo' : i[3]} for i in students}
+    solution = {i[0]: i for i in students if i[2] <= 18  if i[3] =='M'}    #menor a 18 y que sea m
+    #solution = {i[0]: {'cal': i[1], 'edad':i[2], 'sexo' : i[3]} for i in students if mean(i[1])>=6.0}
 
     print(solution)
 

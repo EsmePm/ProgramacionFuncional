@@ -5,9 +5,9 @@ def func():
          ('Angel', [7.7, 6.6, 8.9], 16, 'H'),
          ('Denisse', [7.7, 6.6, 8.9], 21, 'M'))
     
-    students = [ i for i in t if i[2] >= 18]  #mayor de 18
+    #students = [ i for i in t if i[2] >= 18]  #mayor de 18
     #students = [ i for i in t if i[2] >= 18 and i[3]=='M']    #mujer
-    #students = [ i for i in t if sum(i[1])/len(i[1]) > 6]
+    students = [ i for i in t if sum(i[1])/len(i[1]) > 6]
     print(students)
 
 if __name__ == '__main__':
