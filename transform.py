@@ -104,3 +104,65 @@ print(sorted_dates)
 
 sorted_dates_by_y = sorted(sorted_dates, key=lambda x: (x[5:7], x[0:4], x[8:10]))
 print(sorted_dates_by_y)
+
+names = ('Ana', 'Carlos', 'Javier', 'Marias')
+last_name = ('Juarez', 'Martinez', 'Gonzalez', 'Vasquez')
+age = (19, 21, 20, 18)
+
+people = list(zip(names, last_name, age))
+print(people)
+
+sorted_people = sorted(people, key= lambda x:x[1])
+print(sorted_people)
+
+from operator import itemgetter
+sorted_people = sorted(people, key= itemgetter(1))
+print(sorted_people)
+
+f = itemgetter(1)
+t = ('Ana', 'Juarez', 19)
+s = f(t)
+print(s)
+
+fruits = ['Banana', 'apple', 'Apricot', 'Clementine', 'avocado']
+sorted_fruits = sorted(fruits)
+print(sorted_fruits)
+
+sorted_fruits = sorted(fruits, key= lambda x : x.lower())
+print(sorted_fruits)
+
+from operator import methodcaller
+
+sorted_fruits = sorted(fruits, key= methodcaller('lower'), reverse=True)
+print(sorted_fruits)
+
+f = methodcaller('lower')
+s = f('Banana')
+print(s)
+
+import math
+k = [1, 4, -2, 16, -3, 36, -1]
+f = filter(lambda x: x>=0, k)
+m = map(math.sqrt, f)
+
+m = map(math.sqrt, filter(lambda x : x>=0, k))
+print(list(m))
+
+def same(s):
+    print('Same', s)
+    return s
+
+def not_empty(s):
+    if s:
+        print('True', s)
+        return True
+    else:
+        print('False')
+        return False
+
+k = ['a', '', 'b', '']
+m = map(same, filter(not_empty, k))
+print('Star')
+for s in m:
+    print('Dentro del ciclo', s)
+    
