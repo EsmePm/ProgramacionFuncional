@@ -8,7 +8,7 @@ for i in range(len(names)):
 for n in names:
     print(n)
 
-for i in enumerate(names):
+for i in enumerate(names): #enumerate, evita la variable que numere
     print(i)
 
 for i,j in enumerate(names):
@@ -17,7 +17,7 @@ for i,j in enumerate(names):
 for i,j in enumerate(names, 11):
     print(i, ". ", j)
 
-full_name = zip(names, last_name, age)
+full_name = zip(names, last_name, age) 
 
 for i, j, k in full_name:
     print(j, ", ", i, " ", k)
@@ -166,3 +166,12 @@ print('Star')
 for s in m:
     print('Dentro del ciclo', s)
     
+def format_person(first, last, age):
+    return "{}, {} -age{}".format(last, first, age)
+
+people = [('Arturo', 'Martínez', 25), ('Veronica', 'Juarez', 19), ('Maria', 'Lopez', 26)]
+print(*zip(*people))
+
+m = map(format_person, *zip(*people))
+for p in m:
+    print(p)
