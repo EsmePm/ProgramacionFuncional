@@ -1,5 +1,6 @@
 import math
-#len 
+from operator import itemgetter
+#len solo se aplica en secuencias no en iterables 
 l = [1, 2, 3]
 print(len(l))
 
@@ -45,3 +46,49 @@ print(sr)
 s = ['abc', 'def', 'ghi']
 sr = ''.join(s)
 print(sr)
+
+#min
+
+a = [2, 5, 7, 1]
+print(min(a))
+
+m = map(math.sqrt, l)
+print(min(m))
+
+b = [[1, 2, 3], [1, 1, 5], [6, 7, 8], [1, 0, 5]]
+print(min(b))
+
+c = [1, 2, 3, 4, 5]
+print(min(c, default=0)) #default solo lo arroja cuando se considere la excepción
+
+print(min(b, default=0, key= lambda x: x[1]))
+print(min(b, default=0, key= itemgetter(1)))
+
+#max
+
+#any
+#si al menos uno de los elementos es True retorna un True y False si esta vacío
+print(any([1, 0, 2]))
+print(any(['a', '', 'b']))
+print(any(['', 0, False]))
+print(any([]))
+
+#all
+#retorna True si todos los elementos son True y si el iterable esta vacío
+print(all([1, 0, 2]))
+print(all(['a', '', 'b']))
+print(all(['', 0, False]))
+print(all([]))
+
+import functools, operator
+#reduce
+#toma los dos primeros elementos y aplica la función, el resultado lo aplica con el siguiente elemento, así sucesivamente
+a = [2, 3, 5, 2]
+print(functools.reduce(operator.mul, a))
+print(functools.reduce(lambda x, y:x*y, a, 10))
+
+b = [2]
+print(functools.reduce(lambda x, y:x*y, b, 10))
+
+#practica
+#
