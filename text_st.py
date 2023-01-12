@@ -33,13 +33,15 @@ print(tuple(e))
 
 import functools, operator
 
-#functools.reduce(operator.add, m)   #sum(m)
+s = filter(lambda x: x not in stop_words, new)
+m = map(len, s)
+functools.reduce(operator.add, m)   #sum(m)
 
 def opssumcount(a, b):
     return (b[0], a[1]+b[1])
 
 s = filter(lambda x: x not in stop_words, new)
 m = map(len, s)
-total, count = functools.reduce(opssumcount, enumerate(m, 1))
-avg = total / count
+count1, total = functools.reduce(opssumcount, enumerate(m, 1))
+avg = total / count1
 print(avg)
