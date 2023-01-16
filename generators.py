@@ -53,3 +53,8 @@ m = map(lambda x : math.sqrt(x) + 1, range(100))
 
 m2 = (math.sqrt(x) for x in range(100))
 m2 = (math.sqrt(x)+1 for x in range(100))
+
+#filter map
+l = [-1, 2, 7, 4, -6, 9, -3]
+m = map(math.sqrt, filter(lambda x : x>=0, l))
+g = (math.sqrt(x) for x in l if x >= 0)
