@@ -1,9 +1,8 @@
-
+import time
 import sys
 
 # Estrutura para representar una pila
 class Stack:
-    # Constructor para establecer los datos de
     # nodo de árbol recién creado
     def __init__(self, capacity):
         self.capacity = capacity
@@ -41,46 +40,46 @@ def Pop(stack):
     return stack.array[Top]
    
 # Movimiento entre dos barras
-def moveDisksBetweenTwoPoles(src, dest, s, d):
+def moveDisksBetweenTwoPoles(src, dest, c, b):
     pole1TopDisk = Pop(src)
     pole2TopDisk = Pop(dest)
  
     # Si barra 1 está vacía
     if (pole1TopDisk == -sys.maxsize):
         push(src, pole2TopDisk)
-        moveDisk(d, s, pole2TopDisk)
+        moveDisk(b, c, pole2TopDisk)
        
     # Si barra 2 está vacía
     elif (pole2TopDisk == -sys.maxsize):
         push(dest, pole1TopDisk)
-        moveDisk(s, d, pole1TopDisk)
+        moveDisk(c, b, pole1TopDisk)
        
     # Si el disco superior de la barra 1 > el disco superior de la barra 2
     elif (pole1TopDisk > pole2TopDisk):
         push(src, pole1TopDisk)
         push(src, pole2TopDisk)
-        moveDisk(d, s, pole2TopDisk)
+        moveDisk(b, c, pole2TopDisk)
        
     # Si el disco superior de la barra 1 < el disco superior de la barra 2
     else:
         push(dest, pole2TopDisk)
         push(dest, pole1TopDisk)
-        moveDisk(s, d, pole1TopDisk)
+        moveDisk(c, b, pole1TopDisk)
    
 # Función para mostrar el moviemiento de los discos
 def moveDisk(fromPeg, toPeg, disk):
-    print("Move the disk", disk, "from '", fromPeg, "' to '", toPeg, "'")
+    print("Disco", disk, "de '", fromPeg, "' hacia '", toPeg, "'")
     
    
 # Función para el rompecabezas de torres de hanoi
 def tohIterative(num_of_disks, src, aux, dest):
-    s, d, a = 'S', 'D', 'A'
+    a, b, c = 'A', 'B', 'C'
    
     # Si el número de discos es par, entonces intercambia 
     # polo de destino y polo auxiliar
     if (num_of_disks % 2 == 0):
-        temp = d
-        d = a
+        temp = b
+        b = a
         a = temp
     total_num_of_moves = int(pow(2, num_of_disks) - 1)
    
@@ -90,18 +89,20 @@ def tohIterative(num_of_disks, src, aux, dest):
    
     for i in range(1, total_num_of_moves + 1):
         if (i % 3 == 1):
-            moveDisksBetweenTwoPoles(src, dest, s, d)
+            moveDisksBetweenTwoPoles(src, dest, c, b)
    
         elif (i % 3 == 2):
-            moveDisksBetweenTwoPoles(src, aux, s, a)
+            moveDisksBetweenTwoPoles(src, aux, c, a)
    
         elif (i % 3 == 0):
-            moveDisksBetweenTwoPoles(aux, dest, a, d)
+            moveDisksBetweenTwoPoles(aux, dest, a, b)
 
 
 if __name__ == '__main__':
+    start = time.time()
+
     # Número de discos
-    num_of_disks = 3
+    num_of_disks = int(input("Ingrese un número de discos: "))
     
     # Crear 3 pilas de tamño num_of_disks
     src = createStack(num_of_disks)
@@ -109,3 +110,6 @@ if __name__ == '__main__':
     aux = createStack(num_of_disks)
     
     tohIterative(num_of_disks, src, aux, dest)
+
+    end = time.time()
+    print("tiempo: ", end - start)

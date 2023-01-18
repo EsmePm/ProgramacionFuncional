@@ -6,4 +6,4 @@ def headline(text: str, align: bool = True) -> str:
 		return f" {text.title()} ".center(50, "o")
 
 #print(headline("python type checking"))
-#print(headline("python type checking", align=False)) #align="center"
+print(headline("python type checking", align=True)) #align="center"
