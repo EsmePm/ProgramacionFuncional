@@ -11,5 +11,5 @@ def read_csv(name_file):
         return list_students
 
 if __name__=='__main__':
-    l = read_csv('./arch.csv')
+    l = read_csv('./archivo.csv')
     print(l)

@@ -1,12 +1,4 @@
 
-colors = ['red', 'blue', 'white', 'yellow', 'orange']
-print(colors)
-fruits = {'apple', 'banana', 'cherry', 'orange', 'pear'}
-favorite_fruits = {'apple', 'banana', 'cherry', 'orange', 'pear', 'apple'}
-numbers = {1, 5, 7, 9, 3}
-things = {"abc", 34, True, 40, "male"}
-print(things)
-
 """
 #tamaño de un conjunto
 fruits = {'apple', 'banana', 'cherry', 'orange', 'pear'}
@@ -119,7 +111,7 @@ my_set = fruits.intersection(logos)
 
 print(my_set)
 """
-"""
+
 #Mantener a todos menos a los duplicados con simmetric_difference_update()
 
 fruits = {"apple", "banana", "cherry"}
@@ -128,7 +120,6 @@ logos = {"google", "microsoft", "apple"}
 fruits.symmetric_difference_update(logos)
 
 print(fruits)
-"""
 """
 #Mantener a todos menos a los duplicados simmetric_difference()
 
