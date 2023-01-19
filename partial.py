@@ -79,7 +79,7 @@ print_colon (1, 2, 3)
 #se instalo pymonad desde https://pypi.org/project/PyMonad/
 from pymonad.tools import curry
 #anotacion currificada para hacer anotaciones parciales
-@curry
+@curry (4)
 def quadc(a, b, c, x):
     return a*x*x + b*x + c
 
@@ -97,15 +97,3 @@ m = map(quadc(a, b), c, x)
 m = map(partial(quad, a, b), c, x)
 # aplicacion parcial con clouser
 m = map(quad_ab(a, b), c, x)
-
-# composición
-from operator import add, mul
-
-add(2, mul(3, x))
-
-f = partial(add, 2)
-g = partial(mul, 3)
-
-f(g(x))
-
-partial(add, 2)(partial(mul, 3)(x))
