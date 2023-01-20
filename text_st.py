@@ -1,5 +1,4 @@
-new = "A habit is a behavior that requires little thought or effort to carry out because you have become so accustomed to doing it. Habits tend to be automatic, uncontrolled, and almost unintentional."
-
+new = "Health experts said it is too early to predict whether demand would match up with the 171 million doses of the new boosters the U.S. ordered for the fall."
 new = new.split()
 print(new)
 lenghts = map(len, new)
