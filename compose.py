@@ -1,3 +1,4 @@
+# es la continuacion de partial.py
 # composición
 from operator import add, mul
 from functools import partial
@@ -51,13 +52,24 @@ def compose(*f):
 test = []
 
 #composicion de funciones con pyMonad
-@curry
+@curry(1)
 def reversedc(x):
     return reversed(x)
 
-@curry
+@curry(1)
 def rangec(x):
     return range(x)
-import pymonad.tools 
-countdown = reversedc * rangec
+from pymonad.reader import Compose
+
+countdown = Compose(range).then(reversed)
+#countdown = reversedc * rangec
 #countdown = compose2(reversed, range)
+
+for i in countdown(7):
+    print(i)
+
+countdown2 = Compose(rangec). then(reversedc)
+
+print("---")
+for i in countdown2(5):
+    print(i)
