@@ -1,0 +1,6 @@
+mi,casa,esta,bonita,y,esta,roja,por,dentro
+la,casa,roja,esta,bonita
+
+por,dentro,y,por,fuera,es,roja
+y,esta,bonita
+mi,casa,es,tu,casa
