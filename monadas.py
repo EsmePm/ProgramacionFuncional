@@ -1,7 +1,7 @@
 # functor
 #pip install oslash en env
 from oslash import Just, Nothing, List
-from operator import neg
+from operator import neg, add
 
 a  = Just(3)
 print(a)
@@ -20,9 +20,20 @@ print(n)
 nn = neg % n
 print(nn)
 
-l = List[1, 2, 3]
+l = [1, 2, 3]
 print(l)
 print(type(l))
 
-ln = neg % l
-print(ln)
+# ln = neg % l
+# print(ln)
+
+#functors aplicativos
+a = Just(3)
+f = Just(neg)
+
+b = f.apply(a)
+# b = a * f
+
+a = Just(2)
+b = add % a
+print(b)
