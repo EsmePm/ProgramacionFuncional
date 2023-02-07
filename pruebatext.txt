@@ -1,0 +1,6 @@
+1=mi,casa,esta,bonita,y,esta,roja,por,dentro
+2=la,casa,roja,esta,bonita
+3= 
+4= por,dentro,y,por,fuera,es,roja
+5=y,esta,bonita
+6=mi,casa,es,tu,casa
