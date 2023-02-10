@@ -1,0 +1,37 @@
+
+
+Caracteristicas del paradigma
+- Funciones de primera clase u orden superior: las funciones son objetos de primera clase
+- Datos inmutables: que no utilicen variables para rastrear el estado de un cálculo
+- Evaluación estricta y no estricta: posibilidad de aplasar un cálculo hasta que sea necesario
+- Recursión: no depende de ciclos
+- Sistemas de tipo funcional
+
+Antecedentes
+- Cálculo proposicional y predicados: William Rowan Hamilton, Augustus De morgan, George Boole, en el siglo XIX. 
+- Teoría de números: Giuseppe Peano, en el siglo XIX
+- Principia mathematica: Bertrand Russell, Alfred North Whitehead, siglo XX(1910-1913)
+- El matemático Hilbert propuso un programa para demostrar que la principia describia totalmente las matemáticas.
+- Godel, en 1931 demostro que cualquier sistema potente para describir la aritmética era necesariamente incompleta
+- El programa de Hilbert promovió la investigación:
+    - Máquina de Turing, Alan Turing
+    - Función recursiva de Kleen, Stephen Kleen
+    - Cálculo lambda, Alonzo Church
+
+Type Hits
+- Ventajas:
+    - Ayuda a identificar errores
+    - Ayuda a documentar el código 
+    - Permite construir y mantener una arq limpia
+- Desventajas:
+    - Tiempo y esfuerzo
+    - Es mejor en las versiones recientes de python
+    - Reduce ligeramente el tiempo de ejecución
+
+Listas:
+- Desventajas:
+    - Necesario recordar el mecanismo de copiar
+    - Si la lista es muy larga, se crea una copia extra la cuál genera gasto de tiempo
+    - Puede salirse de control
+
+- Las listas son inmutables y las tuplas con los números son mutables
